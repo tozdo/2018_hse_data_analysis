@@ -5,7 +5,7 @@ output: html_document
 ---
 
 ```{r}
-###1.1
+### 1.1
 df = readr::read_csv('https://raw.githubusercontent.com/agricolamz/2018_data_analysis_for_linguists/master/data/students/tozdo/hw3_binomial/hw3_binomial.csv')
 x_df = df$k
 n_df = df$n
