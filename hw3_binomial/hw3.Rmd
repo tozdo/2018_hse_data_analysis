@@ -3,9 +3,8 @@ title: "hw3"
 author: "Tamara Zdorova"
 output: html_document
 ---
-
-```{r}
 ### 1.1
+```{r}
 df = readr::read_csv('https://raw.githubusercontent.com/agricolamz/2018_data_analysis_for_linguists/master/data/students/tozdo/hw3_binomial/hw3_binomial.csv')
 x_df = df$k
 n_df = df$n
@@ -14,9 +13,8 @@ binomial_test <- binom.test(x = x_df, n = n_df, p = p_df)
 binomial_test
 ```
 
-
-```{r}
 ### 1.2
+```{r}
 library(mosaic)
 set.seed(42)
 do(1000)*
@@ -30,9 +28,8 @@ simulations %>%
   count(greater)
 ```
 
-
-```{r}
 ### 1.3
+```{r}
 alpha_prior = p_df*n_df
 beta_prior = (1 - p_df)*n_df
 alpha_data <- x_df
@@ -42,9 +39,8 @@ beta_post <- beta_prior + beta_data
 mean = alpha_post/(alpha_post + beta_post)
 mean
 ```
-
-```{r}
 ### 1.4
+```{r}
 alpha_post2 = 1 + alpha_data
 beta_post2 = 1 + beta_data
 mean2 = alpha_post2/(alpha_post2 + beta_post2)
